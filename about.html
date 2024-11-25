@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgriSmart</title>
+  <style>
+    .card {
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+  </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./about-styles.css">
+  
+</head>
+<body class="about-us-page">
+  <section class="Navbar">
+    <div class="container">
+      <header class="d-flex flex-wrap justify-content-between py-3 mb-4 border-bottom">
+        <p class="d-flex align-items-center text-decoration-none">
+          <span class="logo">
+            <span class="half-colored">Agri</span>Smart
+          </span>
+        </p>
+        <ul class="nav nav-pills">
+          <li class="nav-item ms-3">
+            <a href="./index.html" class="nav-link text-white" >Home</a>
+          </li>
+          <li class="nav-item ms-3">
+            <a href="./about.html" class="nav-link active text-white" aria-current="page">About Us</a>
+          </li>
+          <li class="nav-item ms-3">
+            <a href="./contact.html" class="nav-link text-white">Contact Us</a>
+          </li>
+        </ul>
+      </header>
+    </div>
+  </section>
+  
+  <div class="about-background-3d"></div>
+  <main class="container my-5">
+    <h1 class="text-center mb-4">What is AgriSmart?</h1>
+    <div class="card p-4 shadow-lg bg-light">
+      <p>
+        The role of a farmer is extremely important for maintaining the natural balance in the ecosystem. Many other personnel require a farmer for their survival. A farmer is an individual who produces the requisite food for others to prosper. Hence, it is extremely important for him to know what crop suits their land the most.
+      </p>
+      <p>
+        By means of AgriSmart, we have tried to develop a system that recommends the most suitable crop for the farmer. He would be required to enter certain parameters like nitrogen, phosphorus, moisture, potassium, etc., and the system would then recommend the most suitable crop. 
+      </p>
+      <p>
+        Through this project, we have primarily used three main models -Random Forest, Naive Bayes and XG Boost- and evaluated their accuracy levels to choose the best among them. The algorithm employed in this project is Machine Learning. The specific technique used is Regression, i.e., predicting the crop based on input parameters. 
+      </p>
+      <p>
+        We hope to make a positive impact through this software and have worked diligently to achieve the same.
+      </p>
+    </div>
+  </main>
+  </div>
+
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-2 border-top" 
+        style="background-color: rgba(255, 255, 255, 0.8); margin-bottom: 0; padding-bottom: 0.5rem;">
+  <div class="col-md-4 d-flex align-items-center">
+    <a href="/" class="mb-3 me-2 mb-md-0 text-dark text-decoration-none lh-1">
+      <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+    </a>
+    <span class="mb-3 mb-md-0 text-dark">© AgriSmart</span>
+  </div>
+
+  <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+    <li class="ms-3"><a class="text-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+    <li class="ms-3"><a class="text-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+    <li class="ms-3"><a class="text-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+  </ul>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./index.js"></script>
+</body>
+</html>

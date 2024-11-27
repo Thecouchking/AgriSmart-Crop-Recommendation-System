@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgriSmart</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles.css') }}">
+  
+</head>
+<body>
+  <section class="Navbar">
+    <div class="container">
+      <header class="d-flex flex-wrap justify-content-between py-3 mb-4 border-bottom">
+        <p class="d-flex align-items-center text-decoration-none">
+          <span class="logo">
+            <span class="half-colored">Agri</span>Smart
+          </span>
+        </p>
+        <ul class="nav nav-pills">
+          <li class="nav-item ms-3">
+            <a href="/" class="nav-link active text-white" aria-current="page">Home</a>
+          </li>
+          <li class="nav-item ms-3">
+            <a href="{{url_for('about')}}" class="nav-link text-white">About Us</a> 
+          </li>
+          <li class="nav-item ms-3">
+            <a href="{{url_for('contact')}}" class="nav-link text-white">Contact Us</a>
+          </li>
+        </ul>
+      </header>
+    </div>
+  </section>
+  
+
+  <div class="background-3d"></div>
+  <div class="container d-flex justify-content-center align-items-center form-container">
+    <div class="card p-4 shadow-lg bg-transparent border-0 text-white">
+      <h1 class="heading text-center">
+        <span class="half-colored">Agri</span>Smart
+      <p>
+        Recommendation System
+      </p>
+    </h1>
+      <form id="recommendationForm" action="{{url_for('predict')}}" method="POST">
+        <div class="mb-3">
+          <label for="nitrogen" class="form-label">Nitrogen (N):</label>
+          <input type="number" id="nitrogen" name="nitrogen" step="any" class="form-control" placeholder="Enter ratio of Nitrogen in soil kg/ha" min="0" max="100" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="phosphorous" class="form-label">Phosphorous (P):</label>
+          <input type="number" id="phosphorous" name="phosphorous" step="any" class="form-control" placeholder="Enter ratio of Phosphorous in soil kg/ha" min="0" max="200" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="potassium" class="form-label">Potassium (K):</label>
+          <input type="number" id="potassium" name="potassium" step="any" class="form-control" placeholder="Enter ratio of Potassium in soil kg/ha" min="0" max="200"  required>
+        </div>
+        <div class="mb-3">
+          <label for="ph" class="form-label">Soil pH:</label>
+          <input type="number" id="ph" name="ph" class="form-control" step="any" placeholder="Enter Soil pH Level" min="0" max="14" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="rainfall" class="form-label">Rainfall (mm):</label>
+          <input type="number" id="rainfall" name="rainfall" class="form-control" step="any" placeholder="Enter Rainfall" min="0" max="500" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100 mt-3">Get Recommendation</button>
+      </form>
+      <div id="result" class="result mt-4">Best suited crop: <strong>{{predictionnb}}</strong>
+        <p>
+          Inputs: Nitrogen: {{N}}, Phosphorous: {{P}}, Potassium: {{K}},<br>
+          Temperature: {{temperature}}°C, Humidity: {{humidity}}%, pH: {{ph}}, Rainfall: {{rainfall}}mm
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-2 border-top" 
+        style="background-color: rgba(255, 255, 255, 0.8); margin-bottom: 0; padding-bottom: 0.5rem;">
+  <div class="col-md-4 d-flex align-items-center">
+    <a href="/" class="mb-3 me-2 mb-md-0 text-dark text-decoration-none lh-1">
+      <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+    </a>
+    <span class="mb-3 mb-md-0 text-dark">© AgriSmart</span>
+  </div>
+
+  <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+    <li class="ms-3"><a class="text-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+    <li class="ms-3"><a class="text-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+    <li class="ms-3"><a class="text-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+  </ul>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{{url_for('static', filename='index.js')}}"></script>
+</body>
+</html>

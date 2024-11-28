@@ -66,10 +66,11 @@ body ::-webkit-scrollbar{
   justify-content: center;
   margin: 0;
   padding: 0;
+  display: grid;
 }
 
 .team-container{
-  display: flex;
+  display: grid;
   gap: 50px;
   justify-content: center;
   flex: 1;

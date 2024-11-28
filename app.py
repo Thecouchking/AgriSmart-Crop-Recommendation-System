@@ -53,7 +53,7 @@ def predict():
         ph = float(request.form['ph'])
         rainfall = float(request.form['rainfall'])
         if weather_fetch() != None:
-            temperature, humidity = weather_fetch()
+            temperature, humidity = weather_fetch()    
         data = np.array([[N, P, K, temperature, humidity, ph, rainfall]])
         my_prediction = nbmodel.predict(data)
         prediction = my_prediction[0]
